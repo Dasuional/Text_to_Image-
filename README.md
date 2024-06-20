@@ -51,21 +51,21 @@ Dataset Preparation
 Training
   Training involves alternating between updating the generator and discriminator. The training script includes steps for:
 
-    1) Loading and preprocessing the dataset.
-    2) Computing the gradient penalty for the discriminator.
-    3) Progressive growing of the GAN, starting from low-resolution images and progressively increasing the resolution.
-    4) Tracking and displaying training progress.
+  1) Loading and preprocessing the dataset.
+  2) Computing the gradient penalty for the discriminator.
+  3) Progressive growing of the GAN, starting from low-resolution images and progressively increasing the resolution.
+  4) Tracking and displaying training progress.
 
 Results
   Results include generated images that correspond to given textual descriptions. Sample outputs can be visualized using scripts provided in the repository.
 
 Requirements
-    1) Python 3.8+
-    2) PyTorch
-    3) torchvision
-    4) numpy
-    5) matplotlib
-    6) tqdm
+    1) Python 3.8+,
+    2) PyTorch,
+    3) torchvision,
+    4) numpy,
+    5) matplotlib,
+    6) tqdm,
 
 Usage
 Dataset Preparation
@@ -74,13 +74,15 @@ Dataset Preparation
 
 Training
    1) Initialize and preprocess the dataset
-     from dataset import ImageLabelDataset
-     dataset = ImageLabelDataset(image_dir, label_dir, transform, encode_label_fn)
-     loader = get_loader(dataset)
+
+          from dataset import ImageLabelDataset
+          dataset = ImageLabelDataset(image_dir, label_dir, transform, encode_label_fn)
+          loader = get_loader(dataset)
    
-   2) Train the model
-      from train import train_fn
-      alpha = train_fn(critic, gen, loader, dataset, step, alpha, opt_critic, opt_gen)
+   3) Train the model
+
+           from train import train_fn
+           alpha = train_fn(critic, gen, loader, dataset, step, alpha, opt_critic, opt_gen)
 
 Generating Images
       1) Generate images from new text descriptions using the trained generator.
